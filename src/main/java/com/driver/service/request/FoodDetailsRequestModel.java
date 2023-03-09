@@ -1,31 +1,10 @@
-package com.driver.shared.dto;
+package com.driver.service.request;
 
-import java.io.Serializable;
+public class FoodDetailsRequestModel {
 
-public class FoodDto{
-
-    private long id;
-    private String foodId;
     private String foodName;
     private String foodCategory;
     private float foodPrice;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFoodId() {
-        return foodId;
-    }
-
-    public void setFoodId(String foodId) {
-        this.foodId = foodId;
-    }
-
     public String getFoodName() {
         return foodName;
     }

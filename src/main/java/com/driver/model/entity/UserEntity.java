@@ -1,16 +1,35 @@
-package com.driver.shared.dto;
+package com.driver.model.entity;
 
-public class UserDto{
+import java.util.List;
 
+import javax.persistence.*;
+
+@Entity(name = "users")
+public class UserEntity {
+
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column(nullable = false)
     private String userId;
+
+    @Column(nullable = false, length = 20)
     private String firstName;
+
+    @Column(nullable = false, length = 50)
     private String lastName;
+
+    @Column(nullable = false, length = 120, unique = true)
     private String email;
 
-    public UserDto() {
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    private List<OrderEntity> orderEntityList;
+
+    public UserEntity() {
 
     }
+
 
     public long getId() {
         return id;
@@ -51,5 +70,4 @@ public class UserDto{
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

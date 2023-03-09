@@ -1,15 +1,12 @@
 package com.driver.service.impl;
 
-import com.driver.io.entity.OrderEntity;
 import com.driver.io.repository.OrderRepository;
-//import com.driver.model.entity.OrderEntity;
-//import com.driver.service.request.OrderDetailsRequestModel;
-import com.driver.model.request.OrderDetailsRequestModel;
+import com.driver.model.entity.OrderEntity;
+import com.driver.service.request.OrderDetailsRequestModel;
 import com.driver.model.response.OperationStatusModel;
 import com.driver.model.response.OrderDetailsResponse;
 import com.driver.model.response.RequestOperationName;
 import com.driver.model.response.RequestOperationStatus;
-import com.driver.service.OrderService;
 import com.driver.shared.dto.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -176,15 +173,8 @@ public class OrderServiceImpl implements OrderService {
         List<OrderDto> orderDtoList = getOrders();
         List<OrderDetailsResponse> orderDetailsResponseList = new ArrayList<>();
         for(OrderDto o : orderDtoList){
-//            orderDetailsResponseList.add(new OrderDetailsResponse(o.getOrderId(),o.getCost(),
-//                    o.getItems(),o.getUserId(),o.isStatus()));
-            OrderDetailsResponse orderDetailsResponse = new OrderDetailsResponse();
-            orderDetailsResponse.setOrderId(o.getOrderId());
-            orderDetailsResponse.setCost(o.getCost());
-            orderDetailsResponse.setItems(o.getItems());
-            orderDetailsResponse.setUserId(o.getUserId());
-            orderDetailsResponse.setStatus(o.isStatus());
-            orderDetailsResponseList.add(orderDetailsResponse);
+            orderDetailsResponseList.add(new OrderDetailsResponse(o.getOrderId(),o.getCost(),
+                    o.getItems(),o.getUserId(),o.isStatus()));
         }
         return orderDetailsResponseList;
     }

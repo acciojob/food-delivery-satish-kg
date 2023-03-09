@@ -2,41 +2,52 @@ package com.driver.model.response;
 
 public class FoodDetailsResponse {
 
-	private String foodId;
-	private String foodName;
-	private float foodPrice;
-	private String foodCategory;
+    private String foodId;
+    private String foodName;
+    private float foodPrice;
+    private String foodCategory;
 
-	public String getFoodId() {
-		return foodId;
-	}
+    public FoodDetailsResponse() {
 
-	public void setFoodId(String foodId) {
-		this.foodId = foodId;
-	}
+    }
 
-	public String getFoodName() {
-		return foodName;
-	}
+    public FoodDetailsResponse(String foodId, String foodName, float foodPrice, String foodCategory) {
+        this.foodId = foodId;
+        this.foodName = foodName;
+        this.foodPrice = foodPrice;
+        this.foodCategory = foodCategory;
+    }
 
-	public void setFoodName(String foodName) {
-		this.foodName = foodName;
-	}
+    public String getFoodId() {
+        return foodId;
+    }
 
-	public float getFoodPrice() {
-		return foodPrice;
-	}
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
 
-	public void setFoodPrice(float foodPrice) {
-		this.foodPrice = foodPrice;
-	}
+    public String getFoodName() {
+        return foodName;
+    }
 
-	public String getFoodCategory() {
-		return foodCategory;
-	}
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
 
-	public void setFoodCategory(String foodCategory) {
-		this.foodCategory = foodCategory;
-	}
+    public float getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(float foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public String getFoodCategory() {
+        return foodCategory;
+    }
+
+    public void setFoodCategory(String foodCategory) {
+        this.foodCategory = foodCategory;
+    }
 
 }

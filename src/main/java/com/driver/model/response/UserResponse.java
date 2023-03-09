@@ -2,41 +2,52 @@ package com.driver.model.response;
 
 public class UserResponse {
 
-	private String userId;
-	private String email;
-	private String firstName;
-	private String lastName;
+    private String userId;
+    private String email;
+    private String firstName;
+    private String lastName;
 
-	public String getUserId() {
-		return userId;
-	}
+    public UserResponse() {
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public UserResponse(String userId, String email, String firstName, String lastName) {
+        this.userId = userId;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
 }

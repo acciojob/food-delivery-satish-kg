@@ -1,11 +1,8 @@
 package com.driver.service.impl;
 import java.util.UUID;
-
-import com.driver.io.entity.UserEntity;
 import com.driver.io.repository.UserRepository;
-//import com.driver.model.entity.UserEntity;
-//import com.driver.service.request.UserDetailsRequestModel;
-import com.driver.model.request.UserDetailsRequestModel;
+import com.driver.model.entity.UserEntity;
+import com.driver.service.request.UserDetailsRequestModel;
 import com.driver.model.response.OperationStatusModel;
 import com.driver.model.response.RequestOperationName;
 import com.driver.model.response.RequestOperationStatus;
@@ -202,14 +199,8 @@ public class UserServiceImpl implements UserService {
         List<UserDto> userDtoList = getUsers();
         List<UserResponse> userResponseList = new ArrayList<>();
         for(UserDto u : userDtoList){
-//            userResponseList.add(new UserResponse(u.getUserId(),
-//                    u.getEmail(), u.getFirstName(), u.getLastName()));
-            UserResponse userResponse = new UserResponse();
-            userResponse.setUserId(u.getUserId());
-            userResponse.setFirstName(u.getFirstName());
-            userResponse.setLastName(u.getLastName());
-            userResponse.setEmail(u.getEmail());
-            userResponseList.add(userResponse);
+            userResponseList.add(new UserResponse(u.getUserId(),
+                    u.getEmail(), u.getFirstName(), u.getLastName()));
         }
         return userResponseList;
     }

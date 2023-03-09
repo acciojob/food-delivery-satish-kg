@@ -1,24 +1,44 @@
-package com.driver.model.response;
+package com.driver.model.entity;
 
+import java.util.List;
 
-public class OrderDetailsResponse {
+import javax.persistence.*;
 
+@Entity(name = "orderEntity")
+public class OrderEntity {
+
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Column(nullable = false)
     private String orderId;
+
+    @Column(nullable = false)
     private float cost;
+
+    @Column(nullable = false)
     private String[] items;
+
+    @Column(nullable = false)
     private String userId;
+
+    @Column(nullable = false)
     private boolean status;
 
-    public OrderDetailsResponse() {
+    @ManyToOne
+    @JoinColumn
+    UserEntity userEntity;
 
+    @OneToMany(mappedBy = "orderEntity", cascade = CascadeType.ALL)
+    List<FoodEntity> foodEntityList;
+
+    public long getId() {
+        return id;
     }
 
-    public OrderDetailsResponse(String orderId, float cost, String[] items, String userId, boolean status) {
-        this.orderId = orderId;
-        this.cost = cost;
-        this.items = items;
-        this.userId = userId;
-        this.status = status;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getOrderId() {

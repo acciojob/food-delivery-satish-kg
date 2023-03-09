@@ -1,33 +1,10 @@
-package com.driver.shared.dto;
+package com.driver.service.request;
 
-public class UserDto{
+public class UserDetailsRequestModel {
 
-    private long id;
-    private String userId;
     private String firstName;
     private String lastName;
     private String email;
-
-    public UserDto() {
-
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getFirstName() {
         return firstName;
     }
